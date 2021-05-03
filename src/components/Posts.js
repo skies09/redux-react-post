@@ -14,10 +14,10 @@ class Posts extends Component {
     this.props.fetchPosts();
   }
 
-  componentWillReceiveProps(nextProps){
-if(nextProps.newPost){
-  this.props.posts.unshift(nextProps.newPost);
-}
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newPost) {
+      this.props.posts.unshift(nextProps.newPost);
+    }
   }
 
   render() {
@@ -39,7 +39,7 @@ if(nextProps.newPost){
 Posts.propTypes = {
   fetchPosts: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired,
-  newPost:PropTypes.object
+  newPost: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
